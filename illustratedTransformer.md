@@ -14,4 +14,8 @@ Question - The author says in the real world, the size of a context window can b
 
 RNN takes 2 inputs by design: input + hidden State and returns an output + hidden State
 
+So how a Sequence to sequence model will work is it will take an input, send it through the encoder and decoder. The encoder passes in a context vector to the decoder. Earlier(Pre-attention), this context vector was passed in through every layer of the encoder and every layer of the decoder. 
 
+However, for large sequences, this quickly became a bottleneck.  Attention allows the model to focus on the relevant parts of the input sequence as needed.
+
+Attention encoder now passses all the hidden states to the decoder. The decoder, to find relevant info, takes in all the hidden states, and gives each hidden state a score. The score is then softmaxed, and each vector is multiplied by its softmaxed score. This amplifies relevant results
