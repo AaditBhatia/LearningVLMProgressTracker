@@ -19,3 +19,10 @@ So how a Sequence to sequence model will work is it will take an input, send it 
 However, for large sequences, this quickly became a bottleneck.  Attention allows the model to focus on the relevant parts of the input sequence as needed.
 
 Attention encoder now passses all the hidden states to the decoder. The decoder, to find relevant info, takes in all the hidden states, and gives each hidden state a score. The score is then softmaxed, and each vector is multiplied by its softmaxed score. This amplifies relevant results
+
+Now, back to the original doc - 
+
+The Transformer – a model that uses attention to boost the speed with which these models can be trained. Transformer's help in parallelization. Oh a cool link to understand the attention paper https://nlp.seas.harvard.edu/2018/04/03/attention.html
+
+An encoder in this architecture - Has (Self Attention -> Feed forward neural network.)
+A Decoder in this archutecture  - Has (Self Attention -> Encoder-Decoder Attention -> Feed forward neural network.)
